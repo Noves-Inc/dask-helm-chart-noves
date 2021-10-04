@@ -49,7 +49,7 @@ spec:
             - --nthreads
             - {{ .Values.worker.threads_per_worker | default .Values.worker.resources.limits.cpu | default .Values.worker.default_resources.cpu | quote }}
             - --nprocs
-            - {{ .Values.worker.proc_per_worker | default .Values.worker.resources.limits.cpu | default .Values.worker.default_resources.cpu | quote }}
+            - {{ .Values.worker.procs_per_worker | default .Values.worker.resources.limits.cpu | default .Values.worker.default_resources.cpu | quote }}
             - --memory-limit
             - {{ .Values.worker.resources.limits.memory | default .Values.worker.default_resources.memory | quote }}
           {{- end }}
